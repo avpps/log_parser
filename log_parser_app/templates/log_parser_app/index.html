@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+{% if projects %}
+    <ul>
+    {% for project in projects %}
+        <li><a href="{{ bug.url }}">{{ project.name }}</a><li>
+    {% endfor %}
+    </ul>
+{% endif %}
+</body>
+</html>
