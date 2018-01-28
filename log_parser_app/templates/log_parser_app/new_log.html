@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<form action="{% url 'log_parser_app:new_log_append' %}" method="post">
+{% csrf_token %}
+    <input type="submit" value="Add"/>
+    <br/>
+    <textarea name="log" draggable="true" contenteditable="true" rows="80" cols="100"></textarea>
+</form>
+
+</body>
+</html>

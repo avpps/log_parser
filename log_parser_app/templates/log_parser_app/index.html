@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+
+<a href="{% url 'log_parser_app:new_log' %}">Append new log</a>
+
+<p>Current projects:</p>
+{% if projects %}
+    <ul>
+    {% for project in projects %}
+        <li><a href="{{ bug.url }}">{{ project.name }}</a><li>
+    {% endfor %}
+    </ul>
+{% endif %}
+</body>
+</html>
