@@ -5,7 +5,8 @@
 <body>
 
 
-<a href="{% url 'log_parser_app:new_log' %}">Append new log</a>
+<a href="{% url 'log_parser_app:details_create' %}">Create new data</a>
+<a href="{% url 'log_parser_app:log_create_init' %}">Create new log</a>
 
 <p>Current projects:</p>
 {% if projects %}

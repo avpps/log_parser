@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<form action="{% url 'log_parser_app:project_create' %}" method="post">
+{% csrf_token %}
+    <input name="name" type="text" maxlength="50"/>
+    <br/>
+    <input type="submit" value="Create project"/>
+</form>
+<br/>
+<form action="{% url 'log_parser_app:bug_create' %}" method="post">
+{% csrf_token %}
+    <input name="number" type="number" max="999999999"/>
+    <input name="title" type="text" maxlength="200"/>
+    <input name="url" type="url" maxlength="200"/>
+    <select name="project_name">
+        {% for name in projects_names %}
+        <option value="{{ name }}">{{ name }}</option>
+        {% endfor %}
+    </select>
+    <br/>
+    <input type="submit" value="Create bug"/>
+</form>
+<br/>
+<form action="{% url 'log_parser_app:log_type_create' %}" method="post">
+{% csrf_token %}
+    <input name="name" type="text" maxlength="50"/>
+    <textarea name="details"></textarea>
+    <textarea name="example"></textarea>
+    <br/>
+    <input type="submit" value="Create log type"/>
+</form>
+<br/>
+<form action="{% url 'log_parser_app:log_content_type_create' %}" method="post">
+{% csrf_token %}
+    <input name="name" type="text" maxlength="200"/>
+    <br/>
+    <input type="submit" value="Create log content type"/>
+</form>
+<br/>
+
+</body>
+</html>

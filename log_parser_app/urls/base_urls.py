@@ -5,7 +5,12 @@ from log_parser_app import views
 app_name = 'log_parser_app'
 urlpatterns = [
     url(r'^$', views.index, name='index'),
-    url(r'^new_log/$', views.new_log, name='new_log'),
-    url(r'^new_log_append/$', views.new_log_append, name='new_log_append'),
-    url(r'^show_log/$', views.show_log, name='show_log'),
+    url(r'^details_create/$', views.details_create, name='details_create'),
+    url(r'^project_create/$', views.project_create, name='project_create'),
+    url(r'^bug_create/$', views.bug_create, name='bug_create'),
+    url(r'^log_type_create/$', views.log_type_create, name='log_type_create'),
+    url(r'^log_content_type_create/$', views.log_content_type_create, name='log_content_type_create'),
+    url(r'^log_create_init/$', views.log_create_init, name='log_create_init'),
+    url(r'^log_create/$', views.log_create, name='log_create'),
+    url(r'^log_details/$', views.log_details, name='log_details'),
 ]

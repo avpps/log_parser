@@ -1,3 +1,6 @@
 from .commons import (
-    index, new_log, new_log_append, show_log
+    index, details_create,
+    project_create, bug_create,
+    log_type_create, log_content_type_create,
+    log_create_init, log_create, log_details
 )

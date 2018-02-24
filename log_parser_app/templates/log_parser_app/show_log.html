@@ -4,7 +4,10 @@
 </head>
 <body>
 
-<textarea draggable="true" contenteditable="true" rows="80" cols="100">{{ log }}</textarea>
+<p>{{ log.bug.project.name}} {{ log.bug.number }} {{ log.log_type.name }} {{ log.log_content_type.name }}</p>
+<p>{{ log.description }}<p/>
+<br/>
+<textarea draggable="true" contenteditable="true" rows="80" cols="100">{{ log.parsed }}</textarea>
 
 </body>
 </html>

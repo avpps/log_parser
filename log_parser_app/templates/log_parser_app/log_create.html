@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<form action="{% url 'log_parser_app:log_create' %}" method="post">
+{% csrf_token %}
+
+    <input type="submit" value="Add"/>
+    <select name="project_name">
+        {% for name in projects_names %}
+        <option value="{{ name }}">{{ name }}</option>
+        {% endfor %}
+    </select>
+    <select name="bug_number">
+        {% for bug in bugs %}
+        <option value="{{ bug.number }}">{{ bug.number }} {{ bug.title }}</option>
+        {% endfor %}
+    </select>
+    <select name="log_type">
+        {% for type in log_types %}
+        <option value="{{ type }}">{{ type }}</option>
+        {% endfor %}
+    </select>
+    <select name="log_content_type">
+        {% for type in log_content_types %}
+        <option value="{{ type }}">{{ type }}</option>
+        {% endfor %}
+    </select>
+    <br/>
+    <textarea name="description" draggable="true" contenteditable="true" rows="2" cols="100"></textarea>
+    <textarea name="raw_log" draggable="true" contenteditable="true" rows="80" cols="100"></textarea>
+</form>
+
+</body>
+</html>
