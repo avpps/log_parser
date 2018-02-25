@@ -8,14 +8,9 @@
 {% csrf_token %}
 
     <input type="submit" value="Add"/>
-    <select name="project_name">
-        {% for name in projects_names %}
-        <option value="{{ name }}">{{ name }}</option>
-        {% endfor %}
-    </select>
     <select name="bug_number">
         {% for bug in bugs %}
-        <option value="{{ bug.number }}">{{ bug.number }} {{ bug.title }}</option>
+        <option value="{{ bug.number }}">{{ bug.project_name }} - {{ bug.number }} {{ bug.title }}</option>
         {% endfor %}
     </select>
     <select name="log_type">

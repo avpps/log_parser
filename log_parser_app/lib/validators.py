@@ -7,9 +7,9 @@ STR_2_REGEXP = r'[a-zA-Z0-9_\- \[\]]+'
 
 
 def validate_regexp(
-    value, pattern,
-    missing_allowed=False, default=None,
-    min_len=None, max_len=None
+        value, pattern,
+        missing_allowed=False, default=None,
+        min_len=None, max_len=None
 ):
     if missing_allowed and not value:
         return default
@@ -24,10 +24,10 @@ def validate_regexp(
 
 
 def validate_int(
-    value,
-    missing_allowed=False, default=None,
-    min_len=None, max_len=None,
-    min_value=None, max_value=None
+        value,
+        missing_allowed=False, default=None,
+        min_len=None, max_len=None,
+        min_value=None, max_value=None
 ):
     int_value = int(validate_regexp(
         value, INT_REGEXP,
@@ -43,9 +43,9 @@ def validate_int(
 
 
 def validate_str_1(
-    value,
-    missing_allowed=False, default=None,
-    min_len=None, max_len=None
+        value,
+        missing_allowed=False, default=None,
+        min_len=None, max_len=None
 ):
     return validate_regexp(
         value, STR_1_REGEXP,
@@ -55,9 +55,9 @@ def validate_str_1(
 
 
 def validate_str_2(
-    value,
-    missing_allowed=False, default=None,
-    min_len=None, max_len=None
+        value,
+        missing_allowed=False, default=None,
+        min_len=None, max_len=None
 ):
     return validate_regexp(
         value, STR_2_REGEXP,
@@ -67,8 +67,8 @@ def validate_str_2(
 
 
 def validate_project_name(
-    value,
-    missing_allowed=False, default=None,
+        value,
+        missing_allowed=False, default=None,
 ):
     return validate_str_1(
         value,
@@ -78,8 +78,8 @@ def validate_project_name(
 
 
 def validate_url(
-    value,
-    missing_allowed=False, default=None,
+        value,
+        missing_allowed=False, default=None,
 ):
     return value
 

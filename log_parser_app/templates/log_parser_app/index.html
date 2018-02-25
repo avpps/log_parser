@@ -9,10 +9,22 @@
 <a href="{% url 'log_parser_app:log_create_init' %}">Create new log</a>
 
 <p>Current projects:</p>
-{% if projects %}
+{% if logs %}
     <ul>
-    {% for project in projects %}
-        <li><a href="{{ bug.url }}">{{ project.name }}</a><li>
+    {% for project, bugs in logs.items %}
+    <p>--- {{ project }} ---</p>
+        {% for bug, logs in bugs.items %}
+        <p>--- --- {{ bug }}</p>
+            {% for log in logs %}
+            </br>
+                --- --- --- {{ log.log_type.name }} {{ log.description }} {{ log.valid }}
+                <form action="{% url 'log_parser_app:log_details' %}" method="post">
+                {% csrf_token %}
+                    <input type="hidden" value="{{ log.id }}" name="log_id"/>
+                    <input type="submit" value="Show log"/>
+                </form>
+            {% endfor %}
+        {% endfor %}
     {% endfor %}
     </ul>
 {% endif %}
