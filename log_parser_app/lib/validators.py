@@ -88,3 +88,10 @@ class Validator(object):
 
     def __init__(self, value):
         self.value = value
+
+
+def validate_new_user(**user_data):
+    return dict(
+        username=user_data.get('username'),
+        password=user_data.get('password'),
+        email=user_data.get('email'))

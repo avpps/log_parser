@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<form action="{% url 'log_parser_app:signup' %}" method="post">
+{% csrf_token %}
+    <input name="username" type="text" maxlength="50"/>
+    <input name="email" type="email" maxlength="50"/>
+    <br/>
+    <br/>
+    <input name="password" type="password" maxlength="50"/>
+    <br/>
+    <input name="password_conf" type="password" maxlength="50"/>
+    <br/>
+    <input type="submit" value="Create project"/>
+</form>
+
+</body>
+</html>

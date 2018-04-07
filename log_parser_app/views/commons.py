@@ -67,6 +67,9 @@ def project_create(request):
     :param request:
     :return:
     """
+
+    import ipdb
+    ipdb.set_trace()
     name = validate_project_name(request.POST['name'])
 
     # check if just exist:
